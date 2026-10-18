@@ -1,0 +1,23 @@
+config noytads 'main'
+	option enabled '1'
+	option listen_port '8443'
+	option ca_path '/etc/noytads/ca.pem'
+	option ca_key_path '/etc/noytads/ca.key'
+	option ca_export_port '8080'
+	option log_level 'warn'
+	option cert_cache_size '256'
+	# Domains to never intercept (banking, brokers, etc.)
+	list bypass_domain 'banking.example.com'
+	# list bypass_domain '*.interactivebrokers.co.uk'
+
+config filterlist
+	option name 'brave-unbreak'
+	option url 'https://raw.githubusercontent.com/nicil/brave-unbreak.txt'
+	option enabled '1'
+	option update_interval '6h'
+
+config filterlist
+	option name 'cosmetic-youtube'
+	option url 'https://raw.githubusercontent.com/nicil/yt-cosmetic.txt'
+	option enabled '1'
+	option update_interval '12h'
